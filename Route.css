@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+     /* background: url("BG2.png");
+     background-repeat: no-repeat; */
+     background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+     background-size: cover;
+     background-repeat: no-repeat; 
+     background-attachment: fixed;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.side-menu h1 {
+    color: #090979;
+    display: flex;
+    /* justify-content: center; */
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: -40%;
+    /* padding-right: 10%; */
+}
+
+.btn {
+    background: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    margin-left: 60%;
+}
+
+.btn:hover {
+    color: #05060a;
+    background: white;
+    padding: 3px 8px;
+    border: 2px solid #090979;
+}
+
+.side-menu {
+    position: fixed;
+    background: #05060a;
+    width: 20vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-menu .brand-name {
+    background: whitesmoke;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.side-menu .brand-name h1{
+    margin-left: -20%;
+    font-family: 'Dancing Script', cursive;
+    font-size: 58px;
+    color: #001F3F; /* Deep Indigo color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.side-menu .brand-name h1:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+    color: #090979;
+  }
+.side-menu .brand-name img {
+    margin-left: -30%;
+    height:85%;
+    width:85%;
+}
+
+.side-menu li a {
+    font-size: 24px;
+    padding: 10px 40px;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+}
+
+.side-menu li a:hover {
+    background: white;
+    color: #090979;
+}
+
+.container {
+    /* background: url("BG2.png"); */
+    position: absolute;
+    background-size: 100%;
+    right: 0;
+    width: 80vw;
+    height: 100vh;
+}
+
+.container .header {
+    position: fixed;
+    top: 0;
+    width: 80vw;
+    height: 10vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.container .header .nav {
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+
+.container .header .nav .search {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.container .header .nav .search button {
+    width: 40px;
+    height: 40px;
+    border: none;
+}
+
+.container .header .nav .search input[type="text"] {
+    border: none;
+    background: #f1f1f1;
+    padding: 10px;
+    width: 50%;
+}
+
+.container .header .nav .user {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .header .nav .user img {
+    width: 40px;
+    height: 40px;
+}
+
+.container .header .nav .user .img-case {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.container .header .nav .user .img-case img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.main {
+    /* background: url("BG1.JPG"); */
+    background-repeat: no-repeat;
+    background-size: 140%;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.form {
+    /* background-color: #ffffffbd; */
+    width: 100%;
+    height: 100%;
+    position: relative;
+    justify-content: center;
+    padding-top: 10%;
+    border-radius: 10px;
+    z-index: 0;
+}
+
+.form h1 {
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-left: 3%;
+    padding-bottom: 2%;
+}
+
+ul.ui img {
+    height: 20%;
+    width: 20%;
+}
+
+
+.search input[type="text"] {
+    width: 300px; 
+    height: 40px; 
+    padding: 5px;
+    font-size: 16px; 
+}
+
+.form h1 {
+    font-size: 38px;
+    text-align: center;
+    font-family: 'Pacifico', cursive; /* Replace with your selected font */
+    color: #e74c3c; /* Change to your desired color */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    background:  linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: transform 0.3s, text-shadow 0.3s;
+    cursor: pointer;
+}

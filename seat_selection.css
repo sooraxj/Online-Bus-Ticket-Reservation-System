@@ -1,0 +1,212 @@
+body{
+    margin-bottom: 5%;
+
+}
+.bus {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #090979;;
+    background-color: #f7f7f7;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+
+}
+
+.bus h2{
+    color: #090979;
+    background-color: #c9cfd4; 
+    margin-bottom:22px;
+}
+.bus_seat {
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid black;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    
+}
+
+.seats {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin-left: 65%;
+    
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #069406;
+    position: relative;
+    font-weight: bold;
+    color:white;    
+}
+
+.seat.left-seat {
+    order: -1;
+}
+
+.seat input[type="checkbox"] {
+    display: none;
+}
+   .seat-no {
+    margin-top: 5px;
+    margin-right: 2px;
+    
+}
+
+.seat-gap {
+width: 30px;
+height: 30px;
+margin: 2px;
+border: none; /* Remove border */
+background-color: transparent; /* Make it transparent */
+}
+
+
+
+
+.seat label {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    
+}
+
+.seat input[type="checkbox"]:checked + label {
+    top:0px;
+    background-color: #090979;
+    color: white;
+}
+
+.booked-seat {
+    background-color: #FF0000; 
+    pointer-events: none; 
+    color:white;
+}
+
+.seat-number {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+input[type="submit"] {
+    margin-top: 15px;
+    background-color: #090979;;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #090979;
+}
+
+/* CSS styles for the bus info portion */
+/* Container Styles */
+.bus-info-container {
+    background-color: #f2f2f2;
+    border: 1px solid #090979;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: -3%;
+}
+
+/* Heading Styles */
+.h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
+    font-weight: bolds;
+    color: #000000;
+}
+
+/* Paragraph Styles */
+.bus-info {
+    font-size: 18px;
+    margin: 10px 0;
+    line-height: 1.4;
+    font-weight: bold;
+}
+
+.bus-info span {
+    font-size: 18px;
+    margin: 10px 0;
+    line-height: 1.4;
+    font-weight: bold;
+}
+
+/* seat info box */
+
+        .seat-legend {
+            margin-top: 30px;
+            border: 1px solid black;
+            margin-bottom: 5%;
+
+        }
+
+       .booked-seat-below {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #FF0000;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .available-seat-below {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #069406;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .selected-seat-below {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #090979;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        
+        .legend-item {
+            margin-top: 10px;
+            margin-left: 40px;
+            display: flex;
+            float:left;
+            align-items: center;
+        }
+
+        .legend-text {
+            margin-left: 5px;
+        }

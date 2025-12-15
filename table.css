@@ -1,0 +1,126 @@
+/* Table styles */
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-bottom: 20%;
+    margin-left: 5%;
+
+}
+
+/* Table header styles */
+table th {
+    /* background-color: #1B394D; */
+    /* background: linear-gradient(111.4deg, rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2%); */
+    background: radial-gradient( rgba(7,7,9,1),  rgba(27,24,113,1));
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+
+
+}
+
+/* Table row styles */
+table td {
+    padding: 10px;
+    border-top: 1px solid #CDDCDC; /* Keep only the top border */
+    border-bottom: 1px solid #CDDCDC; /* Keep only the bottom border */
+    text-align: center;
+    font-weight: 400;
+    /* font-size: 18px; */
+    /* font-size: larger; */
+    font-weight: bold;
+    
+
+
+}
+
+table tr {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Alternate row background color */
+table tr:nth-child(even) {
+    background-color: #F5F5F5;
+}
+
+/* Hover effect on rows */
+table tr:hover {
+    background-color:white;
+    color: #000000;
+    cursor: pointer;
+}
+
+/* Style the "Update" button */
+table td button {
+    background: linear-gradient(111.4deg, rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2%);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Style the "Update" button on hover */
+table td button:hover {
+    background-image: linear-gradient(86.3deg, rgba(0,119,182,1) 3.6%, rgba(8,24,68,1) 87.6%);
+}
+
+
+.dropdown {
+    text-align: center; 
+    position: relative;
+}
+
+.dropbtn {
+    background-color: #3498db;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #2980b9;
+}
+
+.btn1 {
+    background: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+    color: #fff; 
+    padding: 8px 16px; 
+    border: none; 
+    cursor: pointer; 
+    /* border-radius: 5px;  */
+}
+
+.btn1:hover {
+    
+    border: 2px solid #090979;
+    color: #05060a;
+    background: white;
+}

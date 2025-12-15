@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+/* Reset default styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+/* LOGO */
+.brand-name {
+    /* background: whitesmoke; */
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.brand-name h1{
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    font-size: 58px;
+    color: #090979;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ .brand-name h1:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+    color: #001F3F; 
+  }
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color:#c9cfd4; 
+    color: #000000;
+    border-radius: 10px;
+}
+
+
+
+/* Navigation styles */
+.navigation ul {
+    list-style: none;
+    display: flex;
+    margin-top: 2%;
+}
+
+.navigation li {
+    padding-left: -8%;
+    margin: 0 30px;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.navigation ul li a:hover {
+    text-decoration: none;
+    color: #090979;
+}
+
+/* Home profile */
+.user-actions {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-button {
+    background-color: transparent;
+    color: #090979;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}   
+
+.customer-welcome {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.name-highlight {
+    color: #ff0000;
+}
+.name-highlight:hover {
+    text-decoration: none; 
+    color:green;
+    cursor: pointer; 
+}
+
+.profile-icon {
+    font-size: 24px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    min-width: auto;
+    right: 0;
+    left: auto;
+}
+
+.dropdown-item {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-item:hover {
+    background-color: #ddd;
+}
+
+/* Add some styles for when the name is clicked */
+.name-highlight:hover {
+    text-decoration: underline;
+}
+  

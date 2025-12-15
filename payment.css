@@ -1,0 +1,317 @@
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 30px;
+    max-width: 800px; 
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid silver ;
+}
+
+h1 {
+    text-align: center;
+    color: #090979;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #000000;
+    font-weight: bold;
+
+}
+
+hr{
+    color:black;
+    border: 1px solid black;
+}
+
+.total-fare {
+    background: #C9CCD3;
+ background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
+ background-blend-mode: lighten;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+    
+.custom-control-label::before,
+.custom-control-label::after {
+    border-radius: 50%;
+}
+
+/* Display payment options in the same line */
+.payment-options,.payment-options label{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    gap:50%;
+    margin-bottom: 15px;
+}
+
+.existing-card-label,
+.new-card-label {
+    display: flex;
+    align-items: center;
+}
+
+.existing-card-label input[type="radio"],
+.new-card-label input[type="radio"] {
+    margin-right: 10px;
+}
+
+
+/* Style for the new card section */
+.credit-card {
+    margin-left: 18%;
+    max-width: 475px;
+    width: 100%;
+    height: 280px;
+    background-color: #333;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+
+
+.chip {
+    background-image: url('img/chip.png'); 
+    margin-top: 2%;
+    width: 50px;
+    height: 35px;
+    background-size: cover;
+    margin-right: 15px;
+}
+
+
+
+.card-number {
+    font-size: 22px;
+    font-weight: bold;
+    /* margin-bottom: 5px; */
+    border: none; 
+    background: none;
+    outline: none; 
+    color:#ffffff;
+
+}
+.card-number:focus,.card-holder:focus,.cvv-input:focus {
+    border: none; 
+    background: none;
+    outline: none; 
+    color:#ffffff;
+    box-shadow: none;
+    
+}
+
+
+#newCardForm .card-number::placeholder {
+    color: #ffffff; 
+}
+
+.card-holder,
+.card-expiry {
+    font-size: 20px;
+    margin-right: 10px;
+    border: none; 
+    background: none;
+    outline: none; 
+    color:#ffffff;
+
+    
+}
+
+#newCardForm .card-holder::placeholder {
+    color: #ffffff; 
+}
+
+
+.credit-card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+    background-blend-mode: multiply,multiply;
+    padding: 15px;
+    height: 100%;
+}
+
+.date-cvv-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.cvv-container {
+    display: flex;
+    align-items: center;
+    
+
+}
+
+
+
+.cvv-input {
+    width: 60px;
+    height: 30px;
+    margin-left: -50%;
+    background-color: transparent;
+    color: #000000;
+    text-align: center;
+    font-size: 14px;
+    border: none; 
+    background: none;
+    outline: none; 
+}
+
+#newCardForm .cvv-input::placeholder {
+    color: #ffffff; 
+}
+
+
+.exp-date {
+    margin-left: 20px;
+    width: 140px;
+    height: 30px;
+    background-color: transparent;
+    text-align: center;
+    font-size: 14px;
+    border: none !important; 
+    background: none !important; 
+    outline: none !important; 
+}
+
+
+#cardExistsAlert {
+    margin-top: 10px;
+}
+
+
+.date-cvv-container {
+    position: relative;
+}
+
+.exp-date {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 4%;
+    font-size: 14px;
+    color:transparent;
+    background: none;
+}
+
+.placeholder-text {
+    position: absolute;
+    top: 20px;
+    left: 17px;
+    pointer-events: none; 
+    transition: 0.2s ease-out;
+    color: #ffffff; 
+
+}
+
+.exp-date:focus + .placeholder-text {
+    color:transparent;
+    border: #ffffff;
+}
+
+.exp-date:focus {
+    color:#ffffff;
+    box-shadow: none;
+
+}
+
+.card-type {
+    margin-left: 40%;
+    background-image: url('img/visa.avif'); 
+    width: 90px;
+    height: 65px;
+    background-size: cover;
+}
+
+/* Style for Existing card container */
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border:1px solid #090979;
+}
+
+.card-title {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.custom-control-label {
+    font-size: 16px;
+}
+
+.form-group input[type="text"] {
+    width: 80px;
+    margin-top: -7%;
+    margin-left: 45%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.custom-control-label::before {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    left: -30px;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+    background: linear-gradient(111.4deg, rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2%);
+}
+
+.card-text{
+    margin-left: 50%;
+    margin-top: -18%;
+    padding:30px;
+
+}
+
+.card a i{
+    margin-left: 95%;
+    margin-top:-10%;
+    font-size: 20px;
+    color:red;
+}
+
+
+.payment-button {
+    margin-top: 3%;
+    background: linear-gradient(111.4deg, rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2%);
+    color: #fff;
+    font-weight: bold;
+    margin-left: 34%;
+    width: 30%;
+}
+
+.payment-button:hover {
+    background-image: linear-gradient(86.3deg, rgba(0,119,182,1) 3.6%, rgba(8,24,68,1) 87.6%);
+}

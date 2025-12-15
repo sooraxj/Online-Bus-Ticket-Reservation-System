@@ -1,0 +1,271 @@
+<?php
+date_default_timezone_set('UTC');
+
+  include 'Dbconnect.php';
+  session_start();
+  if (!isset($_SESSION["username"])) {
+      header("Location: login.php");
+      exit();
+  }
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Reports</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .content {
+            margin: 105px;
+        }
+
+        .form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #000000;
+            text-align:center;
+        }
+
+        th, td {
+            text-align: center;
+        }
+
+        thead {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:hover {
+            background-color: #ffffff;
+        }
+
+        .button-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%; 
+            background-color: #c9cfd4;
+            padding: 10px;
+            white-space: nowrap;
+            text-align: center; 
+        }
+
+        .btn1 {
+            margin-right: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .btn1:hover{
+            text-decoration:none;
+
+        }
+
+        #print-content {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #download-pdf {
+            background-color: #008CBA;
+            color: white;
+        }
+
+        #download-excel {
+            background-color: #f44336;
+            color: white;
+        }
+
+        #Back {
+            background-color: #000000;
+            color: white;
+        }
+
+        body {
+            margin: 0;
+        }
+        .search-bar-container {
+            margin-top: 10px; 
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            padding: 8px 12px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #008CBA;
+            color: white;
+            border-radius: 5px;
+        }
+
+      
+
+        .button-container {
+        display: flex;
+        align-items: center; 
+        
+    }
+
+    .button-container .search-bar-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        margin-left:5%;
+
+    }
+
+    .button-container form {
+        margin-right: 10px; 
+    }
+
+    .btn1 {
+        margin-right: 10px;
+    }
+    .pspace{
+        margin-top:1%;
+           margin-left:25%;
+        }
+    .space{
+        margin-left:1px;
+    }
+
+
+
+    </style>
+</head>
+<body>
+        <div class="button-container">
+        <div class="pspace">
+        <form action="Driver-pdf.php" method="POST">
+        <input id="download-pdf"  class="pdf btn1" type="submit" value="Pdf">
+        </form>
+       </div>
+        <div class="space">
+        <button id="print-content" class="btn1" onclick="printBusPdfContent()">Print</button>
+        <button id="download-excel" class="btn1">Excel</button>
+        <a href="Reports.php" class="btn1 btn-primary home" id="Back">Back</a>
+        </div>         
+        <div class="search-bar-container">
+            <form method="get" autocomplete="off">
+                <input type="text" name="search" placeholder="Search..." value="<?php echo isset($_GET['search']) ? $_GET['search'] : ''; ?>">
+                <button type="submit">🔍</button>
+            </form>
+        </div>
+
+    </div>
+<div class="content">
+    <div class="main">
+        <div class="form">
+            <h1>Driver Reports</h1>
+            <div class="table-responsive">
+                <table id="driver-table" class="table content-table pdf">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Sl.No</th>
+                            <th>Name</th>
+                            <th>E-mail</th>
+                            <th>Mobile No</th>
+                            <th>Licence No</th>
+                            <th>Licence Expiry</th>
+                            <th>Badge No</th>
+                            <th>Street</th>
+                            <th>City</th>
+                            <th>District</th>
+                            <th>State</th>
+                            <th>Pin Code</th>
+                            <th>Gender</th>
+                            <th>Dob</th>
+                            <th>Join Date</th>
+                            <th>Experience</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                      
+                        $search = isset($_GET['search']) ? $_GET['search'] : '';
+                        $sql = "SELECT * FROM tbl_Driver WHERE Driver_id LIKE '%$search%' OR D_fname LIKE '%$search%' OR D_mname LIKE '%$search%' OR D_lname LIKE '%$search%'";
+                        $result = $conn->query($sql);
+
+                        if (!$result) {
+                            die("Invalid query:" . $conn->error);
+                        }
+                        $serialNumber = 1;
+
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . $serialNumber . "</td>"; 
+                            echo "<td>" . $row["D_fname"] . " " . $row["D_mname"] . " " . $row["D_lname"] . "</td>";
+                            echo "<td>" . $row["D_email"] . "</td>";
+                            echo "<td>" . $row["D_phone"] . "</td>";
+                            echo "<td>" . $row["D_licence_no"] . "</td>";
+                            echo "<td>" . $row["D_licence_expiry"] . "</td>";
+                            echo "<td>" . $row["D_badge_no"] . "</td>";
+                            echo "<td>" . $row["D_street"] . "</td>";
+                            echo "<td>" . $row["D_city"] . "</td>";
+                            echo "<td>" . $row["D_dist"] . "</td>";
+                            echo "<td>" . $row["D_state"] . "</td>";
+                            echo "<td>" . $row["D_pin"] . "</td>";
+                            echo "<td>" . $row["D_gender"] . "</td>";
+                            echo "<td>" . $row["D_dob"] . "</td>";
+                            echo "<td>" . $row["D_join"] . "</td>";
+                            echo "<td>" . $row["D_experience"] . "</td>";
+                            echo "</tr>";
+
+                            $serialNumber++;
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+<script>
+      function printBusPdfContent() {
+        var printWindow = window.open('Driver-print.php', '_blank');
+        printWindow.onload = function() {
+            printWindow.print();
+        }
+    }
+    document.getElementById('download-excel').addEventListener('click', function () {
+    var wb = XLSX.utils.table_to_book(document.getElementById('driver-table'));
+    XLSX.writeFile(wb, 'Driver-reports.xlsx');
+});
+
+
+
+</script>

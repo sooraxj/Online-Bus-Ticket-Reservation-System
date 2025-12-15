@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body
+{
+    min-height: 100vh;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+h2{
+    color:rgb(0, 32, 32);
+}
+.btn{
+    background: linear-gradient(111.4deg, rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2%);
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.btn:hover{
+  color: #05060A;
+  background-image: linear-gradient(86.3deg, rgba(0,119,182,1) 3.6%, rgba(8,24,68,1) 87.6%);
+  padding: 3px 8px;
+  border: 2px solid  #090979;
+}
+
+.btnsmall{
+  background: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+
+.btnsmall:hover{
+    color: #05060A;
+    background: white;
+    padding: 3px 8px;
+    border: 2px solid  #090979;
+}
+
+  /* side bar Transition */
+
+  .side-menu h1 {
+    color: #090979;
+    display: flex;
+    /* justify-content: center; */
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: -40%;
+    /* padding-right: 10%; */
+}
+
+  .side-menu {
+    position: fixed;
+    background: #05060A;
+    width: 20vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.5s ease; /* Added transition property */
+}
+
+.side-menu.collapsed {
+    width: 5vw; /* Adjust the collapsed width as per your preference */
+}
+
+
+
+  /* LOGO */
+  .side-menu{
+    position: fixed;
+    background: #05060A;
+    width:20vw;
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+  .side-menu .brand-name {
+    background: whitesmoke;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.side-menu .brand-name h1{
+    margin-left: -20%;
+    font-family: 'Dancing Script', cursive;
+    font-size: 58px;
+    color: #001F3F; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.side-menu .brand-name h1:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+    color: #090979;
+  }
+  .side-menu .brand-name img {
+    margin-left: -30%;
+    height:85%;
+    width:85%;
+}
+.side-menu li a {
+    font-size: 24px;
+    padding: 10px 40px;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s ease; /* Added transition property */
+}
+
+.side-menu li a:hover {
+    background: white;
+    color:#090979;
+}
+
+.side-menu.collapsed li a {
+    justify-content: center; /* Center the collapsed menu text */
+    padding: 10px; /* Adjust the padding as per your preference */
+}
+
+.side-menu.collapsed .brand-name,
+.side-menu.collapsed li a {
+    transition: all 0.5s ease; /* Added transition property */
+}
+
+.container.collapsed {
+    margin-left: 6vw; /* Adjust the collapsed margin as per your preference */
+  }
+  
+  .container .toggle-button {
+    position: absolute;
+    top: 50%;
+    left: 20;
+    /* transform: translateY(-50%);
+    z-index: 1;
+    border: none; */
+    /* padding: 10px; */
+    /* cursor: pointer; */
+    transition: all 0.5s ease; /* Added transition property */
+  }
+  
+  .container.collapsed .toggle-button {
+    left: 5vw; /* Adjust the collapsed button position as per your preference */
+  }
+  
+  .container .toggle-button:focus {
+    outline: none;
+  }
+  
+
+.container{
+    /* background: url(BG1.jpg); */
+    /* background:#9BACCF; */
+    /* background-image: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%); */
+    /* background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%); */
+    background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    position: absolute;
+    background-size: 100%;
+    right: 0;
+    width: 80vw;
+    height: 100vh;
+
+}
+
+.container .header{
+    position: fixed;
+    top: 0%;
+    width: 80vw;
+    height: 10vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+
+.container .header .nav{
+width: 90%;
+display: flex;
+align-items: center;
+}
+
+.container .header .nav .search{
+    flex: 3;
+    display: flex;
+    justify-content: center;
+
+}
+.container .header .nav .search button{
+    width: 40px;
+    height: 40px;
+    border: none;
+}
+
+
+.container .header .nav .search input[type="text"]{
+    border: none;
+    background:#f1f1f1;
+    padding: 10px;
+    width: 50%;
+
+}
+
+
+.container .header .nav .user{
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .header .nav .user img{
+    width: 40px;
+    height: 40px;
+}
+.container .header .nav .user .img-case {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.container .header .nav .user .img-case img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.features,.features h1 {
+    margin-top: 10%;
+    color: #f1f1f1;
+   
+  }
+  
+  .features h1 {
+    text-align: center;
+    margin-bottom: 0px;
+  }
+  
+  .feature {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .feature img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+  }
+  
+  .feature h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .feature p {
+    font-size: 16px;
+  }
+
+  /* Hero Section Styles */
+.hero {
+    background-image: url('hero-image.jpg');
+    padding-left: 1%;
+    padding-top: 15%;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: normal;
+    justify-content: center;
+  }
+  
+  .hero-content {
+    text-align: center;
+    color: #000000;
+  }
+  
+  .hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .hero-content .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+  }
+  
+ul.ui img{
+  height: 20%;
+  width: 20%;
+}
+
+
+/* Styles for the dropdown button */
+.user {
+  position: relative;
+}
+
+.img-case {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+
+
+.search input[type="text"] {
+    width: 300px; 
+    height: 40px; 
+    padding: 5px;
+    font-size: 16px; 
+}
+
+
+/* Dash board counts */
+
+.dashboard-stats {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+margin-top: 40px;
+}
+
+.stat {
+width: 250px;                                                    
+background-color:#ffffff;
+border: 0px solid #252426;
+padding: 20px;
+margin: 20px;
+text-align: center;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat:hover {
+transform: scale(1.05);
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+/* background-color: rgb(255, 255, 255); */
+background-color:rgb(224, 221, 219);
+
+}
+
+.stat h2 {
+margin: 0;
+font-size: 25px;
+color: #080156;
+}
+
+.stat h3 {
+margin: 10px 0;
+font-size: 38px;
+/* color: #676767; */
+color:   #057c93d2 ;
+}
+
+.content {
+margin-top:10%;
+}

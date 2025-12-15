@@ -1,0 +1,81 @@
+body {
+    background-color: #f8f9fa;
+}
+.ticket {
+    background-color: #f1f8ff;
+    border: 1px solid #080156;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.ticket-header {
+    background-color: #080156;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+}
+.ticket-info {
+    margin-top: 20px;
+}
+.passenger-info {
+    margin-top: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+th, td {
+    border: 1px solid #ced4da;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: #f1f1f1;
+}
+.success {
+    color: #27ae60;
+    font-weight: bold;
+}
+.failure {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.Bus-info, .ticket-info {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.fare-info{
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.Bus-info h3, .ticket-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.bus-info-details p, .ticket-info-details p {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.total-fare {
+    font-size: 24px;
+    font-weight: bold;
+    color: #080156;
+}
+
+.Bus-info h3,.ticket-info h3{
+    color: #0f0973;
+    font-weight: bolder;
+}
+

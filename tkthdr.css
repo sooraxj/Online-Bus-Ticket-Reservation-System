@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+/* Reset default styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+/* LOGO */
+.brand-name {
+    /* background: whitesmoke; */
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2%;
+
+}
+.brand-name h1{
+    margin-left: -20%;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    font-size: 58px;
+    color: #090979;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ .brand-name h1:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+    color: #001F3F; 
+  }
+
+/* Header styles */
+.header_t {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #c6bbbb22;
+    color: #000000;
+    border-radius: 10px;
+}
+
+
+
+.customer-welcome {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.name-highlight {
+    color: #ff0000;
+}
+.name-highlight:hover {
+    text-decoration: none; 
+    color:green;
+    cursor: pointer; 
+}
+
+.quote{
+    color:rgb(4, 90, 4);
+}
+
+  
